@@ -1,14 +1,13 @@
 import java.util.Scanner;
 
+// Dedicated class for Prime logic (OOP approach)
 class PrimeChecker {
     private int number;
 
-    // Constructor to initialize the number
     public PrimeChecker(int number) {
         this.number = number;
     }
 
-    // Method containing the prime logic
     public boolean isPrime() {
         if (number <= 1) return false;
         
@@ -21,7 +20,6 @@ class PrimeChecker {
         return true;
     }
 
-    // Method to display the output
     public void displayResult() {
         if (isPrime()) {
             System.out.println("Prime");
@@ -31,16 +29,19 @@ class PrimeChecker {
     }
 }
 
-public class Main {
+// Main class to run the program
+public class CheckPrime {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        // Input
-        int n = sc.nextInt();
-        
-        // Creating an object and calling methods
-        PrimeChecker pc = new PrimeChecker(n);
-        pc.displayResult();
+        // Check if there is an integer to avoid errors
+        if (sc.hasNextInt()) {
+            int n = sc.nextInt();
+            
+            // Create object and call method
+            PrimeChecker pc = new PrimeChecker(n);
+            pc.displayResult();
+        }
         
         sc.close();
     }
